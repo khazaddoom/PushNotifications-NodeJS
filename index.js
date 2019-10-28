@@ -14,7 +14,7 @@ const keys = {
     privateKey: 'gdVcgsEeVYUXdkIi0zWp1xLsoEIzW5m9TcI151QOxFo'
 }
 
-webpush.setVapidDetails('mailto: test@test.com', keys.publicKey, keys.privateKey);
+webpush.setVapidDetails('mailto:test@test.com', keys.publicKey, keys.privateKey);
 
 
 app.post('/subscribe', function(req, res) {
