@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 
-
+// Serve a static path using express
 app.use(express.static(path.join(__dirname, 'client')));
 
 app.use(bodyParser.json());
