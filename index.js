@@ -14,6 +14,21 @@ const keys = {
     privateKey: 'gdVcgsEeVYUXdkIi0zWp1xLsoEIzW5m9TcI151QOxFo'
 }
 
+webpush.setVapidDetails('mailto: test@test.com', keys.publicKey, keys.privateKey);
+
+
+app.post('/subscribe', function(req, res) {
+    
+    const subscription = req.body;
+
+    res.status(201).json({});
+
+    const payload = JSON.stringify({ 'title' : 'Push Test' });
+
+    webpush.sendNotification(subscription, payload).catch(err => console.error(err))
+
+})
+
 const port = 5000;
 app.listen(port, () => console.log(`Server started and listening on Port ${port}...`));
 
